@@ -7,7 +7,8 @@ const flattening = array => {
   const result = [];
   if(array.length === 0) return result;
   for(let a of array) {
-    if(typeof(a) !== 'object') {
+//    if(typeof(a) !== 'object') {
+    if(({}).toString.call(a) !== "[object Array]") {
       result.push(a);
     }
     else {
